@@ -103,6 +103,26 @@ HTML/CSSのクラス名は **Kebab-Case（全て小文字、ハイフン区切�
 * **フォントサイズ**: `px` 指定禁止。`rem` を使用し、Mixin `@include fz(サイズ, 行送り)` で記述する。
 * **数値計算**: Dart Sass 対応のため、割り算は `/` ではなく `math.div()` を使用する。
 
+### Z-indexの管理
+* `_config.scss` 内の `$z-map` 変数で一元管理する。
+* 直接数値を指定せず、関数 `z(キー名)` を使用して呼び出す。
+```scss
+// _config.scss
+$z-map: (
+  header: 100,
+  modal: 1000
+);
+
+// _layout.scss
+.l-header {
+  z-index: z(header);
+}
+```
+
+### フォント設定
+* フォントファミリーは `_config.scss` 内の `$font-family-base` 変数で定義する。
+* ページやセクションでフォントを変更する場合も、可能な限り変数化して管理する。
+
 ## 5. 画像ファイル命名規則 (Image Naming)
 
 画像ファイル名は **Snake_Case（小文字、アンダースコア区切り）** を採用する。
@@ -122,6 +142,7 @@ HTML/CSSのクラス名は **Kebab-Case（全て小文字、ハイフン区切�
 ## 6. JavaScript (jQuery) 実装方針
 
 * **記述場所**: `src/assets/js/common.js`（共通）またはページ固有JSファイル。
+* **構文**: ES6+ (Modern JavaScript) 準拠で記述する。変数は `var` を避け、`const` または `let` を使用すること。
 * **状態管理**: スタイルの直接操作（`.css()`）は避け、クラスの付け替え（`.addClass('is-active')`）で制御する。
 * **スムーススクロール**: 全ページ共通で実装済みとする。
 

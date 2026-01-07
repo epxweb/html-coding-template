@@ -1,50 +1,51 @@
 // Smartphone Nav
-$('.spBtn').on('click', function () {
-	$(this).toggleClass('isActive');
-	$('.spNav').toggleClass('isActive');
-	return false;
+$('.l-header__hamburger').on('click', function () {
+  $(this).toggleClass('is-active');
+  $('.l-header__nav').toggleClass('is-active');
+  return false;
 });
-$('.spNav a[href]').on('click', function () {
-	$('.spBtn').removeClass('isActive');
-	$('.spNav').removeClass("isActive");
+
+$('.l-header__nav a[href]').on('click', function () {
+  $('.l-header__hamburger').removeClass('is-active');
+  $('.l-header__nav').removeClass('is-active');
 });
 
 // Smooth Scroll
 $('a[href^="#"]').on('click', function () {
-	var speed = 400;
-	var href = $(this).attr('href');
-	var target = $(href === '#' || href === '' ? 'html' : href);
+  const speed = 400;
+  const href = $(this).attr('href');
+  const target = $(href === '#' || href === '' ? 'html' : href);
 
-	if (target.length) {
-		var headerHeight = $('header').outerHeight();
-		var position = target.offset().top - headerHeight;
+  if (target.length) {
+    const headerHeight = $('header').outerHeight();
+    const position = target.offset().top - headerHeight;
 
-		$('html, body').animate({
-			scrollTop: position
-		}, speed, 'swing');
-	}
-	return false;
+    $('html, body').animate({
+      scrollTop: position
+    }, speed, 'swing');
+  }
+  return false;
 });
 
 // Scroll Activation
 $(window).on("scroll", function () {
-	if ($(window).scrollTop() > 200) {
-		$("header").addClass("isActive");
-		$(".pagetopNav").addClass("isActive");
-	} else {
-		$("header").removeClass("isActive");
-		$(".pagetopNav").removeClass("isActive");
-	}
+  if ($(window).scrollTop() > 200) {
+    $(".l-header").addClass("is-active");
+    $(".c-pagetop").addClass("is-active");
+  } else {
+    $(".l-header").removeClass("is-active");
+    $(".c-pagetop").removeClass("is-active");
+  }
 });
 
 // Fade In Effect
 $(window).scroll(function () {
-	$('.fadeIn').each(function () {
-		var elemPos = $(this).offset().top;
-		var scroll = $(window).scrollTop();
-		var windowHeight = $(window).height();
-		if (scroll > elemPos - windowHeight + 100) {
-			$(this).addClass('isActive');
-		}
-	});
+  $('.c-fadein').each(function () {
+    const elemPos = $(this).offset().top;
+    const scroll = $(window).scrollTop();
+    const windowHeight = $(window).height();
+    if (scroll > elemPos - windowHeight + 100) {
+      $(this).addClass('is-active');
+    }
+  });
 });

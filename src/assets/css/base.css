@@ -225,30 +225,167 @@ img {
 
 /* Header
 ---------------------------------------------------------------------------- */
+.l-header {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.l-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+@media screen and (max-width: 720px) {
+  .l-header__inner {
+    height: 60px;
+  }
+}
+.l-header__logo {
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+.l-header {
+  /* Hamburger Menu (SP Only) */
+}
+.l-header__hamburger {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .l-header__hamburger {
+    display: block;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    z-index: 101;
+  }
+  .l-header__hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    transition: all 0.3s;
+  }
+  .l-header__hamburger span:nth-child(1) {
+    top: 0;
+  }
+  .l-header__hamburger span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .l-header__hamburger span:nth-child(3) {
+    bottom: 0;
+  }
+  .l-header__hamburger.is-active span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .l-header__hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+  .l-header__hamburger.is-active span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
+}
+.l-header {
+  /* Navigation */
+}
+.l-header__nav ul {
+  display: flex;
+  gap: 30px;
+}
+@media screen and (max-width: 720px) {
+  .l-header__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 100;
+  }
+  .l-header__nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .l-header__nav.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 /* Footer
 ---------------------------------------------------------------------------- */
+.l-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
 /* Utility (Helpers, Functional Classes)
 ---------------------------------------------------------------------------- */
 /* Display Utilities (RWD)
 ---------------------------------------------------------------------------- */
 @media screen and (min-width: 721px) {
-  .sp-only {
+  .u-sp-only {
     display: none !important;
   }
 }
 @media screen and (max-width: 720px) {
-  .pc-only {
+  .u-pc-only {
     display: none !important;
   }
 }
 /* Functional Components (Animations etc)
 ---------------------------------------------------------------------------- */
-.c-fadeIn {
+.c-fadein {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s, transform 1s;
 }
-.c-fadeIn.is-active {
+.c-fadein.is-active {
   opacity: 1;
   transform: translateY(0);
+}
+
+.c-pagetop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 90;
+}
+.c-pagetop a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 12px;
+  text-decoration: none;
+  border-radius: 50%;
+}
+.c-pagetop.is-active {
+  opacity: 1;
+  visibility: visible;
 }

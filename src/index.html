@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ページタイトル</title>
-    <meta name="description" content="">
+    <title>ページタイトル | サイト名</title>
+    <meta name="description" content="サイトの説明文をここに入力します。">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,25 +16,47 @@
     <link rel="canonical" href="">
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="apple-touch-icon" href="/assets/images/common/apple-touch-icon.png">
-    <meta property="og:title" content="ページタイトル">
+    <meta property="og:title" content="ページタイトル | サイト名">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="">
-    <meta property="og:url" content="">
+    <meta property="og:description" content="サイトの説明文をここに入力します。">
+    <meta property="og:url" content="https://example.com/">
     <meta property="og:image" content="/assets/images/common/ogp.png">
-    <meta property="og:site_name" content="ページタイトル">
+    <meta property="og:site_name" content="サイト名">
     <!-- start local style -->
     <link rel="stylesheet" type="text/css" href="assets/css/top.css?v=1" media="all">
     <!-- end local style -->
 </head>
 
 <body id="top">
-    <header>
+    <header class="l-header">
+        <div class="l-inner l-header__inner">
+            <h1 class="l-header__logo"><a href="/">LOGO</a></h1>
+            <div class="l-header__hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="l-header__nav">
+                <ul>
+                    <li><a href="#">MENU 01</a></li>
+                    <li><a href="#">MENU 02</a></li>
+                    <li><a href="#">MENU 03</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        
+        <section class="p-top-mv">
+            <div class="l-inner">
+                <h2 class="c-fadein">Main Visual</h2>
+            </div>
+        </section>
     </main>
-    <nav class="pagetopNav"><a href="#top">ページトップに戻る</a></nav>
-    <footer>
+    <nav class="c-pagetop"><a href="#top">ページトップに戻る</a></nav>
+    <footer class="l-footer">
+        <div class="l-inner">
+            <p class="l-footer__copyright">&copy; 2024 EPX studio.</p>
+        </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <script src="assets/js/common.js?v=1" defer></script>

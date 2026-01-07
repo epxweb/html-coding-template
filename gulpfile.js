@@ -5,7 +5,7 @@ const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync').create();
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
-const { deleteSync } = require('del');
+const del = require('del');
 
 // パス設定
 const paths = {
@@ -67,7 +67,7 @@ function serve() {
 
 // distフォルダを空にする
 function clean(done) {
-  deleteSync(['dist']);
+  del.sync(['dist']);
   done();
 }
 

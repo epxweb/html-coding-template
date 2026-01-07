@@ -90,6 +90,10 @@ npm run build
     *   `c-` (Component): ボタン、カード、アニメーション等の部品（`_utility.scss`）
     *   `u-` (Utility): 表示切り替え、余白調整などの便利クラス（`_utility.scss`）
 
+*   **Z-index管理**: `_config.scss` 内の `$z-map` と `z()` 関数を使用し、マジックナンバーを排除しています。
+    *   例: `z-index: z(header);`
+*   **フォント管理**: フォントファミリーは `_config.scss` の `$font-family-base` 変数で一元管理しています。
+
 ---
 
 ## 6. レスポンシブ対応（mq mixin）
