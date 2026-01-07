@@ -1,0 +1,66 @@
+@use "sass:math";
+
+// imgPath
+$img_common_path: "/assets/images/common";
+$img_path: "/assets/images";
+
+// color
+$base_color: #e6f2c9;
+$text_color: #000000;
+$accent_color: #9ec92b;
+
+// breakPoint
+$breakpoint_s: 720;
+$breakpoint_m: 1366;
+
+// font-size(rem), line-height, letter-spacing
+@mixin fz($font-size, $line-height: 0, $letter-spacing: 0, $font-weight: 0) {
+  //  font-size
+  font-size: math.div($font-size, 10) + rem;
+  //  line-height
+  @if ($line-height!=0) {
+    line-height: math.div($line-height, $font-size);
+  }
+  // letter-spacing
+  @if ($letter-spacing!=0) {
+    letter-spacing: math.div($letter-spacing, 1000) * 1em;
+  }
+  // font-weight
+  @if ($font-weight!=0) {
+    font-weight: ($font-weight);
+  }
+}
+
+// font-size(vw)
+@mixin spfz($fontSizeSp) {
+  font-size: math.div($fontSizeSp, 360) * 100 + vw;
+}
+
+// convert from px to vw
+@function vw($pixel) {
+  $vw-value: math.div($pixel, 360) * 100;
+  @return #{$vw-value}vw;
+}
+
+// convert from px to vw (pc)
+@function pcvw($pixel) {
+  $vw-value: math.div($pixel, 1366) * 100;
+  @return #{$vw-value}vw;
+}
+
+// mq(Media Query)
+@mixin mq($device: sp) {
+  @if $device == sp {
+    @media screen and (max-width: #{$breakpoint_s}px) {
+      @content;
+    }
+  } @else if $device == tab {
+    @media screen and (max-width: #{$breakpoint_m}px) {
+      @content;
+    }
+  } @else if $device == pc {
+    @media screen and (min-width: #{$breakpoint_s + 1}px) {
+      @content;
+    }
+  }
+}

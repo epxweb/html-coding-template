@@ -1,0 +1,254 @@
+/* Configuration (Variables, Mixins)
+---------------------------------------------------------------------------- */
+/* Reset
+---------------------------------------------------------------------------- */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+button,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  border: 0;
+  vertical-align: bottom;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+sub {
+  vertical-align: sub;
+}
+
+sup {
+  vertical-align: super;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* Global (Base HTML Tags)
+---------------------------------------------------------------------------- */
+/* Global Base Styles
+---------------------------------------------------------------------------- */
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  color: #000000;
+  font-family: "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+  outline: none;
+}
+@media screen and (min-width: 721px) {
+  a:hover {
+    opacity: 0.7;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  word-break: normal;
+}
+
+/* Layout (Structure, Header, Footer)
+---------------------------------------------------------------------------- */
+/* Layout Container
+---------------------------------------------------------------------------- */
+.l-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media screen and (max-width: 720px) {
+  .l-inner {
+    padding: 0 15px;
+  }
+}
+
+/* Header
+---------------------------------------------------------------------------- */
+/* Footer
+---------------------------------------------------------------------------- */
+/* Utility (Helpers, Functional Classes)
+---------------------------------------------------------------------------- */
+/* Display Utilities (RWD)
+---------------------------------------------------------------------------- */
+@media screen and (min-width: 721px) {
+  .sp-only {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 720px) {
+  .pc-only {
+    display: none !important;
+  }
+}
+/* Functional Components (Animations etc)
+---------------------------------------------------------------------------- */
+.c-fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s, transform 1s;
+}
+.c-fadeIn.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}

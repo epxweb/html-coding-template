@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+@use "config" as *;
+
+/* Display Utilities (RWD)
+---------------------------------------------------------------------------- */
+@include mq(pc) {
+  .sp-only {
+    display: none !important;
+  }
+}
+
+@include mq(sp) {
+  .pc-only {
+    display: none !important;
+  }
+}
+
+/* Functional Components (Animations etc)
+---------------------------------------------------------------------------- */
+// フェードイン
+.c-fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s, transform 1s;
+
+  &.is-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
