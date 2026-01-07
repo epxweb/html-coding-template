@@ -5,13 +5,13 @@
 /* Display Utilities (RWD)
 ---------------------------------------------------------------------------- */
 @include mq(pc) {
-  .sp-only {
+  .u-sp-only {
     display: none !important;
   }
 }
 
 @include mq(sp) {
-  .pc-only {
+  .u-pc-only {
     display: none !important;
   }
 }
@@ -19,7 +19,7 @@
 /* Functional Components (Animations etc)
 ---------------------------------------------------------------------------- */
 // フェードイン
-.c-fadeIn {
+.c-fadein {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s, transform 1s;
