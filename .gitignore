@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# OS Generated
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# SASS
+.sass-cache/
